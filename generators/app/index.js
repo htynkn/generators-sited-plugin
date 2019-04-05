@@ -19,7 +19,7 @@ module.exports = class extends Generator {
       },
       {
         type: "input",
-        name: "desc",
+        name: "intro",
         message: "插件介绍",
         required: true,
         default: "默认插件介绍"
