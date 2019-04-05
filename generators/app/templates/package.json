@@ -1,21 +1,14 @@
 {
   "name": "zsh8",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
-    "start": "gulp watch",
-    "test": "gulp test",
-    "integration": "gulp integration"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/htynkn/zsh8.git"
+    "start": "gulp watch"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/htynkn/zsh8#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "cheerio": "^1.0.0-rc.2",
