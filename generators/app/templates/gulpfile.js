@@ -7,7 +7,7 @@ var serve = require("gulp-serve");
 var mocha = require("gulp-mocha");
 
 var fs = require("fs");
-var uglifyJS = require("uglify-js");
+var UglifyJS = require("uglify-js");
 var internalIp = require("internal-ip");
 var qrcode = require("qrcode-terminal");
 
@@ -21,7 +21,7 @@ gulp.task("build", function() {
     .src("index.xml")
     .pipe(
       ejs({
-        js: uglifyJS.minify(jsContent).code,
+        js: UglifyJS.minify(jsContent),
         packageVersion: process.env.BUILD_NUMBER
           ? Number(process.env.BUILD_NUMBER)
           : Number(0)

@@ -2,6 +2,8 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const yosay = require("yosay");
+const uuidv1 = require('uuid/v1');
+
 
 module.exports = class extends Generator {
   prompting() {
@@ -59,6 +61,7 @@ module.exports = class extends Generator {
       this.templatePath("index.xml"),
       this.destinationPath(this.path + "/index.xml"),
       {
+        guid : uuidv1(),
         packageVersion: "<%= packageVersion %>",
         app: {
           name: this.answers.name,
