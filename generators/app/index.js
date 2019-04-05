@@ -98,6 +98,6 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.npmInstall();
+    this.npmInstall(null, {}, { cwd: this.path });
   }
 };
