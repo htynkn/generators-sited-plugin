@@ -1,7 +1,7 @@
 {
   "name": "generator-sited-plugin",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Yeoman generator for sited plugin",
   "homepage": "https://github.com/htynkn/generators-sited-plugin",
   "author": {
     "name": "htynkn",
@@ -67,7 +67,6 @@
     ]
   },
   "scripts": {
-    "pretest": "eslint .",
     "test": "jest"
   },
   "repository": "htynkn/generator-sited-plugin",

@@ -11,6 +11,6 @@ describe('generator-sited-plugin:app', () => {
   });
 
   it('creates files', () => {
-    assert.file(['dummyfile.txt']);
+    assert.file(['index.xml']);
   });
 });

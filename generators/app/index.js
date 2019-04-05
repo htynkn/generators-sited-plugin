@@ -20,19 +20,18 @@ module.exports = class extends Generator {
     ];
 
     return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
       this.props = props;
     });
   }
 
   writing() {
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath('index.xml'),
+      this.destinationPath('index.xml')
     );
   }
 
   install() {
-    this.installDependencies();
+    this.npmInstall();
   }
 };
