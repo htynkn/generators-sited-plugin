@@ -2,14 +2,11 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const yosay = require("yosay");
-const uuidv1 = require('uuid/v1');
-
+const uuidv1 = require("uuid/v1");
 
 module.exports = class extends Generator {
   prompting() {
-    this.log(
-      yosay(`Welcome to ${chalk.red("generator-sited-plugin")} generator!`)
-    );
+    this.log(yosay(`欢迎使用 ${chalk.red("多多猫")} 插件生成器!`));
 
     const prompts = [
       {
@@ -61,9 +58,9 @@ module.exports = class extends Generator {
       this.templatePath("index.xml"),
       this.destinationPath(this.path + "/index.xml"),
       {
-        guid : uuidv1(),
         packageVersion: "<%= packageVersion %>",
         app: {
+          guid: uuidv1(),
           name: this.answers.name,
           intro: this.answers.intro,
           url: this.answers.url,

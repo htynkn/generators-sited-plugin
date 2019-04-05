@@ -21,7 +21,7 @@ gulp.task("build", function() {
     .src("index.xml")
     .pipe(
       ejs({
-        js: UglifyJS.minify(jsContent),
+        js: UglifyJS.minify(jsContent).code,
         packageVersion: process.env.BUILD_NUMBER
           ? Number(process.env.BUILD_NUMBER)
           : Number(0)

@@ -2,13 +2,13 @@ function hots_parse(url, html) {
   var $ = cheerio.load(html);
   var list = [];
 
-  list.pust({
+  list.push({
     name: "漫画标题1",
     url: "<%= app.url %>",
     logo: "https://via.placeholder.com/468x300"
   });
 
-  list.pust({
+  list.push({
     name: "漫画标题2",
     url: "<%= app.url %>",
     logo: "https://via.placeholder.com/468x300"
@@ -24,7 +24,7 @@ function book_parse(url, html) {
   data.name = "漫画标题";
   var sections = [];
 
-  for (let index = 0; index < 10; index++) {
+  for (var index = 0; index < 10; index++) {
     sections.push({
       name: "章节" + index,
       url: "<%= app.url %>"
@@ -40,7 +40,7 @@ function section_parse(url, html) {
   var $ = cheerio.load(html);
   var list = [];
 
-  for (let index = 0; index < 30; index++) {
+  for (var index = 0; index < 30; index++) {
     list.push(
       "https://via.placeholder.com/468x300?text=picture-" + (index + 1)
     );
