@@ -68,7 +68,7 @@
     ]
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": "htynkn/generator-sited-plugin",
   "license": "Apache-2.0"
