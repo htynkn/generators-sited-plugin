@@ -15,7 +15,13 @@ describe("generator-sited-plugin:app", () => {
   });
 
   it("creates files", () => {
-    assert.file(["index.xml"]);
-    assert.fileContent("index.xml", "名称");
+    assert.file([
+      "名称/index.xml",
+      "名称/src/index.js",
+      "名称/package.json",
+      "名称/gulpfile.js"
+    ]);
+    assert.fileContent("名称/index.xml", "名称");
+    assert.fileContent("名称/src/index.js", "http://baidu.com");
   });
 });

@@ -4,13 +4,13 @@ function hots_parse(url, html) {
 
   list.pust({
     name: "漫画标题1",
-    url: "http://www.baidu.com",
+    url: "<%= app.url %>",
     logo: "https://via.placeholder.com/468x300"
   });
 
   list.pust({
     name: "漫画标题2",
-    url: "http://www.baidu.com",
+    url: "<%= app.url %>",
     logo: "https://via.placeholder.com/468x300"
   });
 
@@ -27,7 +27,7 @@ function book_parse(url, html) {
   for (let index = 0; index < 10; index++) {
     sections.push({
       name: "章节" + index,
-      url: "http://www.baidu.com"
+      url: "<%= app.url %>"
     });
   }
 
