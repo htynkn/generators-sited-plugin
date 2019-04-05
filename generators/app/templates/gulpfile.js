@@ -41,7 +41,7 @@ gulp.task("default", ["clean"], function() {
 
 gulp.task(
   "server",
-  ["qr"],
+  ["build", "qr"],
   serve({
     root: ["dist"],
     port: port,
