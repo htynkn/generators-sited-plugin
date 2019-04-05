@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sited ver="<%= packageVersion %>" debug="1" engine="32" schema="1">
     <meta guid="<%=app.guid%>">
-        <title><%= app.title %></title>
+        <title><%= app.name %></title>
         <intro><%= app.intro %></intro>
         <author><%= app.author %></author>
         <url><%= app.url %></url>

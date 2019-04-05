@@ -4,12 +4,12 @@ const chalk = require("chalk");
 const yosay = require("yosay");
 
 module.exports = class extends Generator {
-  async prompting() {
+  prompting() {
     this.log(
       yosay(`Welcome to ${chalk.red("generator-sited-plugin")} generator!`)
     );
 
-    this.answers = await this.prompt([
+    const prompts = [
       {
         type: "input",
         name: "name",
@@ -40,14 +40,25 @@ module.exports = class extends Generator {
         message: "网址过滤正则",
         required: true
       }
-    ]);
+    ];
+
+    return this.prompt(prompts).then(answers => {
+      this.answers = answers;
+    });
   }
 
   writing() {
-    this.log("cool feature", this.answers);
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath("index.xml"),
-      this.destinationPath("index.xml")
+      this.destinationPath("index.xml"),
+      {
+        packageVersion: "0.0.1",
+        app: {
+          name: this.answers.name,
+          intro: this.answers.intro
+        },
+        js: "<%-js%>"
+      }
     );
   }
 

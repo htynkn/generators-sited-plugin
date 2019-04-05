@@ -16,5 +16,6 @@ describe("generator-sited-plugin:app", () => {
 
   it("creates files", () => {
     assert.file(["index.xml"]);
+    assert.fileContent("index.xml", "名称");
   });
 });
