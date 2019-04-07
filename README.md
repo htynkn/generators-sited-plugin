@@ -1,8 +1,10 @@
-# generator-sited-plugin [![NPM version][npm-image]][npm-url] 
+# generator-sited-plugin 
+>
+[![NPM version][npm-image]][npm-url] 
 [![Build Status](https://travis-ci.org/htynkn/generators-sited-plugin.svg?branch=master)](https://travis-ci.org/htynkn/generators-sited-plugin)
 [![dependencies Status](https://david-dm.org/htynkn/generators-sited-plugin/status.svg)](https://david-dm.org/htynkn/generators-sited-plugin)
 [![Coverage Status](https://coveralls.io/repos/github/htynkn/generators-sited-plugin/badge.svg?branch=master)](https://coveralls.io/github/htynkn/generators-sited-plugin?branch=master)
-> 
+ 
 
 ## Installation
 
