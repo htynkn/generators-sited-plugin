@@ -17,7 +17,7 @@ gulp.task("build", function() {
   var jsContent = fs.readFileSync("./src/index.js", "utf8");
   var packageContent = require("./package.json");
 
-  gulp
+  return gulp
     .src("index.xml")
     .pipe(
       ejs({
@@ -35,31 +35,40 @@ gulp.task("clean", function() {
   return gulp.src("./dist", { read: false }).pipe(clean());
 });
 
-gulp.task("default", ["clean"], function() {
-  gulp.start("build");
-});
-
 gulp.task(
-  "server",
-  ["build", "qr"],
-  serve({
-    root: ["dist"],
-    port: port,
-    hostname: internalIp.v4.sync()
+  "default",
+  gulp.series("clean", function() {
+    gulp.start("build");
   })
 );
 
-gulp.task("qr", function() {
+gulp.task("qr", function(done) {
   qrcode.generate(
     "http://" + internalIp.v4.sync() + ":" + port + "/index.sited.xml",
     function(qrcode) {
       console.log(qrcode);
+      done();
     }
   );
 });
 
-gulp.task("watch", ["server"], function() {
-  return watch(["src/index.js", "config.js", "index.xml"], function() {
-    gulp.start("build");
-  });
-});
+gulp.task(
+  "server",
+  gulp.series(
+    gulp.parallel("build", "qr"),
+    serve({
+      root: ["dist"],
+      port: port,
+      hostname: internalIp.v4.sync()
+    })
+  )
+);
+
+gulp.task(
+  "watch",
+  gulp.series("server", function() {
+    return watch(["src/index.js", "config.js", "index.xml"], function() {
+      gulp.start("build");
+    });
+  })
+);
