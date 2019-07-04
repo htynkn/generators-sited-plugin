@@ -36,7 +36,8 @@
     "yeoman-generator": "^3.2.0",
     "chalk": "^2.4.2",
     "yosay": "^2.0.2",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "snyk": "^1.189.0"
   },
   "jest": {
     "testEnvironment": "node"
@@ -68,8 +69,11 @@
     ]
   },
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": "htynkn/generators-sited-plugin",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "snyk": true
 }
